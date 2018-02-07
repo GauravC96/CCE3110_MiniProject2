@@ -9,15 +9,15 @@ import java.util.List;
 import java.util.Random;
 
 public class createCards {
-//Card[] deck = new Card[20];
+
 ArrayList<Card> deck = new ArrayList<>(20);
     public static void main(String args[]) {
         createCards cc = new createCards();
-        cc.createCards();
+        cc.createDeck();
         
     }
     
-    public void createCards() {
+    public void createDeck() {
         deck.add(new Card("Jon Jones", 21, 9, 6, 215));
         deck.add(new Card("Frank Mir", 18, 5, 9, 200));
          deck.add(new Card("Georges St. Pierre", 26,  8, 6 , 180));
@@ -30,12 +30,12 @@ ArrayList<Card> deck = new ArrayList<>(20);
         deck.add(new Card("Randy Couture", 19, 7 , 4 , 191));
         deck.add(new Card("Conor McGregor", 21, 18, 1, 188));
         deck.add(new Card("Cain Velasquez", 14, 12, 0, 196));
-       deck.add(new Card("Daniel Cormier", 20, 9, 4, 184));
+        deck.add(new Card("Daniel Cormier", 20, 9, 4, 184));
         deck.add(new Card("Vitor Belfort", 26, 18, 3, 188));
         deck.add(new Card("Lyoto Machida", 22, 9, 2, 188));
         deck.add(new Card("Quinton Jackson", 37, 19, 5, 185));
-       deck.add(new Card("Robbie Lawler", 28, 20 , 1, 188));
-       deck.add(new Card("Nick Diaz", 26, 13 , 8 , 193));
+        deck.add(new Card("Robbie Lawler", 28, 20 , 1, 188));
+        deck.add(new Card("Nick Diaz", 26, 13 , 8 , 193));
        deck.add(new Card("T.J. Dillashaw", 15, 7, 3, 173));
        deck.add(new Card("Junior dos Santos", 18, 12 , 2 , 196));
        Collections.shuffle(deck);      

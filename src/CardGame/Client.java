@@ -14,29 +14,10 @@ package CardGame;
 
 import java.io.*;
 import java.net.*;
+import java.util.Scanner;
 
 class Client {
 
-    /**
-     * The host
-     * 
-     * @var string
-     * 
-     */
-    private static String host = "localhost";
-
-    /**
-     * The port
-     * 
-     * @var integer
-     */
-    private static Integer port = 1337;
-
-    /**
-     * The version of the client class
-     * 
-     * @var double
-     */
     private static Double versionNumber = 1.0;
 
     /**
@@ -55,7 +36,18 @@ class Client {
      */
     private static String msgRules = "Pick A Category, Pick A Card, Higher Value wins";
     public static void main(String args[]) throws Exception {
-
+        
+        
+        System.out.println("Enter Host IP");
+        Scanner scan = new Scanner(System.in); 
+        
+        String host = scan.next();
+        
+        System.out.println("Port");
+        Scanner scan2 = new Scanner(System.in); 
+        
+        int port = scan.nextInt();
+        
 	String input = "";
 	String response;
 
@@ -63,11 +55,14 @@ class Client {
 
 	BufferedReader inFromUser = new BufferedReader(new InputStreamReader(
 		System.in));
-	Socket clientSocket = new Socket(Client.host, Client.port);
+        
+        
+        Socket clientSocket = new Socket(host, port);
 	DataOutputStream outToServer = new DataOutputStream(
 		clientSocket.getOutputStream());
 	BufferedReader inFromServer = new BufferedReader(new InputStreamReader(
 		clientSocket.getInputStream()));
+        
 
 	do {
 
@@ -77,11 +72,11 @@ class Client {
 
 	    // Prompt user for select rock, paper or scissors ...
 	    System.out
-		    .println("Start the game by selecting (R)ock (P)aper, (S)cissors");
+		    .println("Start the game by selecting which pack UFC pack, Car pack, Monster pack");
 	    System.out.print("or type \"-rules\" in order to see the rules: ");
 	    input = inFromUser.readLine();
 
-	} while (!input.equals("R") && !input.equals("P") && !input.equals("S"));
+	} while (!input.equals("UFC") && !input.equals("CAR") && !input.equals("Monster"));
 
 	// Transmit input to the server and provide some feedback for the user
 	outToServer.writeBytes(input + "\n");

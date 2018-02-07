@@ -14,7 +14,7 @@ public int reach;
      * @param w
      * @param k
      * @param s
-     * @param r  comment test
+     * @param r  
  */
 
 public Card(String n, int w, int k, int s, int r) {
